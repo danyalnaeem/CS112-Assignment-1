@@ -74,5 +74,8 @@ print(ratingtwo)
 print(ratingthree)
 
 sorted <- over_Jan1[order(over_Jan1$RevisedAmount),] #Sorts the data in ascending order based on the RevisedAmount
-bottom25_<-sorted[1:25,] #Filters out the least 25 amount of budgets 
-top25_ <- sorted[(nrow(sorted)-24):(nrow(sorted)),] #Filters out the top 25 amount of budgets
+bottom25_<-sorted[1:(0.25*nrow(sorted)),] #Filters out the least 25 amount of budgets 
+top25_ <- sorted[(nrow(sorted)-(0.75*nrow(sorted))):(nrow(sorted)),] #Filters out the top 25 amount of budgets
+mean(bottom25_$Rating, na.rm=TRUE)
+mean(top25_$Rating, na.rm= TRUE)
+
